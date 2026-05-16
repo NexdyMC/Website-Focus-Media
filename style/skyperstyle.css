@@ -1,0 +1,137 @@
+/* ================================================================ */
+/* Skypetcss for website */
+/* ================================================================ */
+
+* {margin: 0; padding: 0; box-sizing: border-box; }
+
+.bg-left    {background-position:left;}
+.bg-right   {background-position:right;}
+.bg-center  {background-position:center;}
+.bg-top     {background-position:top;}
+.bg-bottom  {background-position:bottom;}
+
+.bg-cover {background-size:cover;}
+.bg-contain {background-size:contain;}
+.bg-auto {background-size:auto;}
+
+/* Justify content */
+.justify-content-center {justify-content:center;}
+.justify-content-flex-start  {justify-content:flex-start;}
+.justify-content-flex-end {justify-content:flex-end;}
+.justify-content-space-between {justify-content:space-between;}
+.justify-content-space-around {justify-content:space-around;}
+.justify-content-space-evenly {justify-content:space-evenly;}
+
+/* Justify item */
+.justify-items-center {justify-items: center;}
+.justify-items-end    {justify-items: end;}
+.justify-items-start  {justify-items: start;}
+.justify-items-center {justify-items: center;}
+.justify-items-center {justify-items: center;}
+.justify-items-center {justify-items: center;}
+
+.justify-self-center {justify-self: center;}
+
+/* aling items */
+.align-items-center {align-items: center ;}
+.align-items-flex-start {align-self: flex-start ;}
+.align-items-flex-end {align-content:flex-end;}
+.align-items-stretch {align-content:stretch;}
+.align-items-baseline {align-content:baseline;}
+
+/* text align */
+.alight {align-items: center;}
+.alight {align-self: center ;}
+.alight {align-content: center ;}
+
+/* display */
+.flex{display: flex;}
+.grid{display: grid;}
+.block{display: block;}
+.inline{display:inline;}
+.inline-block{display: inline-block;}
+.inline-flex{display: inline-flex;}
+
+/* text align */
+.text-left{text-align: left;}
+.text-center{text-align: center;}
+.text-right{text-align:right;}
+.text-start{text-align:start;}
+.text-end{text-align:end;}
+.text-justify{text-align:justify;}
+
+/* text decoration */
+.decoration-none{text-decoration: none;}
+.decoration-dashed{text-decoration:dashed;}
+.decoration-dotted{text-decoration:dotted;}
+.decoration-double{text-decoration:double;}
+.decoration-line-through{text-decoration:line-through;}
+.decoration-overline{text-decoration:overline;}
+.decoration-solid{text-decoration:solid;}
+.decoration-underline{text-decoration:underline;}
+
+/* font weight */
+.font-100       {font-weight:100 ;}
+.font-200       {font-weight:200 ;}
+.font-300       {font-weight:300 ;}
+.font-400       {font-weight:400 ;}
+.font-500       {font-weight:500 ;}
+.font-600       {font-weight:600 ;}
+.font-700       {font-weight:700 ;}
+.font-800       {font-weight:800 ;}
+.font-900       {font-weight:900 ;}
+.font-bold      {font-weight:bold;}
+.font-bolder    {font-weight:bolder;}
+.font-lighter   {font-weight:lighter;}
+.font-normal    {font-weight:normal;}
+
+/* font style */
+.font-italic{font-style:italic;}
+.font-normal{font-style:normal;}
+.font-oblique{font-style:oblique;}
+
+/* position */
+.absolute {position:absolute;}
+.fixed    {position:fixed;}
+.relative {position:relative;}
+.static   {position:static;}
+.sticky   {position:sticky;}
+.inherit  {position:inherit;}
+.initial  {position:initial;}
+
+/* border style */
+.bd-solid  {border-style:solid;}
+.bd-hidden {border-style:hidden;}
+
+/* border collapse */
+.bd-collapse {border-collapse: collapse;}
+.bd-inherit  {border-collapse:inherit;}
+.bd-initial  {border-collapse:initial;}
+.bd-unset    {border-collapse:unset;}
+.bd-separate {border-collapse:separate;}
+
+/* object */
+.object-contain{object-fit:contain;}
+.object-cover{object-fit:cover;}
+.object-fill{object-fit:fill;}
+.object-none{object-fit:none;}
+.object-scale-down{object-fit:scale-down;}
+
+/* object position */
+.object-top{object-position: top;}
+.object-bottom{object-position: bottom;}
+.object-left{object-position: left;}
+.object-right{object-position: right;}
+.object-center{object-position: center;}
+
+/* overflow  */
+.overflow-auto{overflow:auto;}
+.overflow-hidden{overflow:hidden;}
+.overflow-scroll{overflow:scroll;}
+.overflow-visible{overflow:visible;}
+.overflow-inherit{overflow:inherit;}
+.overflow-initial{overflow:initial;}
+.overflow-unset{overflow:unset;}
+
+.cursor-pointer{cursor:pointer;}
+.cursor-default{cursor:default;}

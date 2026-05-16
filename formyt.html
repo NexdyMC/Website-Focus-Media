@@ -1,0 +1,389 @@
+<style>
+/* Reset Dasar */
+* {
+  box-sizing: border-box;
+}
+
+/* Container Utama */
+.video-upload-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 43, 94, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  border: 1px solid #e0e6ed;
+}
+
+/* Header */
+.upload-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.upload-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #1a2b4c;
+}
+
+/* Layout Form 2 Kolom */
+.form-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 24px;
+}
+
+.left-col {
+  flex: 3;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-col {
+  flex: 2;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Styles */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a2b4c;
+  font-size: 0.95rem;
+}
+
+.helper-text {
+  font-size: 0.8rem;
+  color: #6c7a9c;
+  margin-top: -4px;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+/* Upload Thumbnail (Kotak Kecil) */
+.thumbnail-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 84px;
+  border: 1px dashed #007bff;
+  border-radius: 8px;
+  background-color: #f8fbff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  gap: 8px;
+}
+
+.thumbnail-upload:hover {
+  background-color: #e6f2ff;
+}
+
+.thumbnail-upload span {
+  font-size: 0.8rem;
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Area Drop Video (Kotak Besar di Kanan) */
+.video-drop-zone {
+  width: 100%;
+  padding: 40px 20px;
+  border: 2px dashed #007bff;
+  border-radius: 12px;
+  background-color: #f8fbff;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.video-drop-zone:hover {
+  background-color: #e6f2ff;
+}
+
+.drop-text {
+  color: #1a2b4c;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.text-blue {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Footer (Tombol) */
+.upload-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e0e6ed;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #fdfdfe;
+}
+
+.btn-cancel, .btn-submit {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: #6c7a9c;
+}
+
+.btn-cancel:hover {
+  background-color: #f1f3f5;
+  color: #1a2b4c;
+}
+
+.btn-submit {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+/* Efek menyala saat file ditarik ke area video */
+.video-drop-zone.drag-active {
+  background-color: #e6f2ff;
+  border-color: #0056b3;
+  transform: scale(1.02);
+}
+
+/* Memastikan padding menyesuaikan jika video sudah muncul */
+.video-drop-zone:has(video) {
+  padding: 8px; 
+}
+</style>
+<body>
+    
+<div class="video-upload-container">
+  <div class="upload-header">
+    <h2>Detail Video</h2>
+  </div>
+
+  <form class="upload-form">
+    <div class="form-layout">
+      
+      <!-- Kolom Kiri: Informasi Utama -->
+      <div class="left-col">
+        <div class="form-group">
+          <label for="videoTitle">Judul (wajib)</label>
+          <input type="text" id="videoTitle" class="form-control" placeholder="Tambahkan judul yang menjelaskan videomu" required>
+        </div>
+
+        <div class="form-group">
+          <label for="videoDesc">Deskripsi</label>
+          <textarea id="videoDesc" class="form-control" rows="6" placeholder="Beri tahu penonton tentang videomu"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Thumbnail</label>
+          <p class="helper-text">Pilih atau upload gambar yang menunjukkan isi videomu.</p>
+          <div class="thumbnail-upload">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>Upload Thumbnail</span>
+            <input type="file" accept="image/*" hidden>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Upload File & Setting Ekstra -->
+      <div class="right-col">
+        <!-- Area Drag & Drop Video -->
+        <div class="video-drop-zone">
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <p class="drop-text">Tarik & letakkan file video ke sini<br>atau <span class="text-blue">Pilih File</span></p>
+          <p class="helper-text">Format didukung: MP4, WebM, AVI</p>
+          <input type="file" accept="video/*" hidden>
+        </div>
+
+        <div class="form-group">
+          <label for="visibility">Visibilitas</label>
+          <select id="visibility" class="form-control">
+            <option value="public">Publik</option>
+            <option value="unlisted">Tidak Publik</option>
+            <option value="private">Pribadi</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tags">Tag</label>
+          <input type="text" id="tags" class="form-control" placeholder="Pisahkan dengan koma (contoh: tutorial, vlog)">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer: Tombol Aksi -->
+    <div class="upload-footer">
+      <button type="button" class="btn-cancel">Batal</button>
+      <button type="submit" class="btn-submit">Selanjutnya</button>
+    </div>
+  </form>
+</div>
+<script>
+// ==========================================
+// 1. LOGIKA PRATINJAU THUMBNAIL (GAMBAR)
+// ==========================================
+const thumbnailZone = document.querySelector('.thumbnail-upload');
+const thumbnailInput = thumbnailZone.querySelector('input[type="file"]');
+
+// Memicu klik input file saat kotak diklik
+thumbnailZone.addEventListener('click', (e) => {
+  // Cegah trigger ganda jika yang diklik sudah berupa input atau gambar pratinjau
+  if (e.target !== thumbnailInput && e.target.tagName !== 'IMG') {
+    thumbnailInput.click();
+  }
+});
+
+// Menangani saat gambar dipilih
+thumbnailInput.addEventListener('change', function() {
+  const file = this.files[0];
+  
+  if (file && file.type.startsWith('image/')) {
+    const imageUrl = URL.createObjectURL(file);
+    
+    // Cek apakah sudah ada elemen gambar pratinjau sebelumnya
+    let imgPreview = thumbnailZone.querySelector('.thumb-preview-img');
+    
+    if (!imgPreview) {
+      // Menyembunyikan ikon dan teks bawaan (kecuali input file)
+      Array.from(thumbnailZone.children).forEach(child => {
+        if (child !== thumbnailInput) child.style.display = 'none';
+      });
+      
+      // Membuat elemen <img> baru
+      imgPreview = document.createElement('img');
+      imgPreview.classList.add('thumb-preview-img');
+      // Style langsung agar gambar pas di dalam kotak thumbnail
+      imgPreview.style.cssText = "width: 100%; height: 100%; object-fit: cover; border-radius: 8px;";
+      thumbnailZone.appendChild(imgPreview);
+    }
+    
+    // Setel sumber gambar ke file yang baru diupload
+    imgPreview.src = imageUrl;
+  }
+});
+
+
+// ==========================================
+// 2. LOGIKA PRATINJAU VIDEO (DRAG & DROP)
+// ==========================================
+const videoZone = document.querySelector('.video-drop-zone');
+const videoInput = videoZone.querySelector('input[type="file"]');
+
+// Memicu klik input file saat kotak diklik
+videoZone.addEventListener('click', (e) => {
+  // Cegah klik ganda dan jangan buka input jika user mengklik kontrol video (play/pause)
+  if (e.target !== videoInput && e.target.tagName !== 'VIDEO') {
+    videoInput.click();
+  }
+});
+
+// Mencegah perilaku default browser saat drag & drop
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  videoZone.addEventListener(eventName, (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+});
+
+// Menambahkan efek visual saat file ditarik ke atas zona
+['dragenter', 'dragover'].forEach(eventName => {
+  videoZone.addEventListener(eventName, () => videoZone.classList.add('drag-active'));
+});
+
+// Menghilangkan efek visual saat file keluar atau dilepaskan
+['dragleave', 'drop'].forEach(eventName => {
+  videoZone.addEventListener(eventName, () => videoZone.classList.remove('drag-active'));
+});
+
+// Menangani file saat dilepaskan (Drop)
+videoZone.addEventListener('drop', (e) => {
+  const file = e.dataTransfer.files[0];
+  handleVideoPreview(file);
+});
+
+// Menangani file saat dipilih secara manual (Klik)
+videoInput.addEventListener('change', function() {
+  const file = this.files[0];
+  handleVideoPreview(file);
+});
+
+// Fungsi utama untuk menampilkan video
+function handleVideoPreview(file) {
+  if (file && file.type.startsWith('video/')) {
+    const videoUrl = URL.createObjectURL(file);
+    
+    let videoPreview = videoZone.querySelector('video');
+    
+    if (!videoPreview) {
+       // Menyembunyikan ikon dan teks bawaan (kecuali input file)
+       Array.from(videoZone.children).forEach(child => {
+         if (child !== videoInput) child.style.display = 'none';
+       });
+
+       // Membuat elemen <video> baru
+       videoPreview = document.createElement('video');
+       videoPreview.controls = true; // Memunculkan tombol play/pause
+       // Style agar video menyesuaikan kotak secara proporsional
+       videoPreview.style.cssText = "width: 100%; height: 100%; max-height: 250px; border-radius: 8px; background: #000;";
+       videoZone.appendChild(videoPreview);
+    }
+    
+    // Setel sumber video ke file yang baru diupload
+    videoPreview.src = videoUrl;
+  } else {
+    alert('Format file tidak didukung. Harap pilih file video (MP4, WebM, dll)!');
+  }
+}
+</script>
+</body>

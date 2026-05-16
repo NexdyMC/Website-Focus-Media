@@ -1,0 +1,161 @@
+<style>
+
+.upload-wrapper {
+  width: 100%;
+  max-width: 400px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Kotak Drag & Drop */
+.drop-zone {
+  width: 100%;
+  padding: 40px 20px;
+  border: 2px dashed #007bff; /* Border biru putus-putus */
+  border-radius: 16px;
+  background-color: #f8fbff; /* Biru sangat pucat */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Efek saat file diseret di atas kotak */
+.drop-zone.drag-active {
+  background-color: #e6f2ff;
+  border-color: #0056b3;
+  transform: scale(1.02);
+}
+
+.drop-content p {
+  color: #6c7a9c;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.highlight-text {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Area Pratinjau Gambar di bawah kotak */
+.preview-container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Style untuk gambar yang sudah di-drop */
+.preview-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<div class="upload-wrapper">
+  <!-- Area Drag and Drop -->
+  <div class="drop-zone" id="dropZone">
+    <div class="drop-content">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+      </svg>
+      <p>Tarik & Letakkan gambar poster di sini<br>atau <span class="highlight-text">Pilih File</span></p>
+    </div>
+    <!-- Input file disembunyikan tapi tetap bisa diklik melalui parent-nya -->
+    <input type="file" id="fileInput" accept="image/*" hidden>
+  </div>
+
+  <!-- Area Pratinjau Gambar -->
+  <div class="preview-container" id="previewContainer">
+    <!-- Elemen gambar akan dimunculkan di sini oleh JavaScript -->
+  </div>
+</div>
+
+<script> 
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+const previewContainer = document.getElementById('previewContainer');
+
+// 1. Jika kotak diklik, trigger input file yang disembunyikan
+dropZone.addEventListener('click', () => {
+  fileInput.click();
+});
+
+// 2. Mencegah perilaku default browser (agar file tidak terbuka di tab baru)
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  dropZone.addEventListener(eventName, preventDefaults, false);
+});
+
+function preventDefaults(e) {
+  e.preventDefault();
+  e.stopPropagation();
+}
+
+// 3. Menambahkan efek visual saat file berada di atas drop zone
+['dragenter', 'dragover'].forEach(eventName => {
+  dropZone.addEventListener(eventName, () => {
+    dropZone.classList.add('drag-active');
+  }, false);
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+  dropZone.addEventListener(eventName, () => {
+    dropZone.classList.remove('drag-active');
+  }, false);
+});
+
+// 4. Menangani file saat di-drop
+dropZone.addEventListener('drop', (e) => {
+  const dt = e.dataTransfer;
+  const files = dt.files;
+  handleFiles(files);
+}, false);
+
+// 5. Menangani file saat dipilih melalui klik
+fileInput.addEventListener('change', function() {
+  handleFiles(this.files);
+});
+
+// 6. Fungsi untuk membaca dan menampilkan gambar
+function handleFiles(files) {
+  if (files.length === 0) return;
+  
+  const file = files[0]; // Mengambil file pertama
+
+  // Pastikan file adalah gambar
+  if (file.type.startsWith('image/')) {
+    const reader = new FileReader();
+    
+    reader.onload = (e) => {
+      // Kosongkan kontainer pratinjau sebelumnya (jika hanya ingin 1 gambar)
+      previewContainer.innerHTML = '';
+      
+      // Buat elemen gambar baru
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.classList.add('preview-image');
+       
+      // Masukkan gambar ke area pratinjau
+      previewContainer.appendChild(img);
+    };
+    
+    // Mulai membaca file
+    reader.readAsDataURL(file);
+  } else {
+    alert('Tolong masukkan file berupa gambar!');
+  }
+}
+</script>
