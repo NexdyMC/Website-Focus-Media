@@ -27,57 +27,68 @@
     </style>
 </head>
 <body>
-
-    
-    <!-- navigasi -->
-    <nav class="fixed top-0 inset-x-0 text-white flex justify-between items-center py-2 px-6 z-999">
-        
-        <!-- Navbar Icon -->
-        <div class="navbar-icon flex">
-            <img src="logo.png" alt="" width="32" class="">
-        </div>
-        
-        <!-- Navbar Navigasi -->
-        <ul class="navbar-nav max-sm:hidden ">
-            <li><a href="#" class="text-white hover:text-gray-500 hover:underline duration-300 font-medium">Beranda</a></li>
-            <li><a href="#" class="text-white hover:text-gray-500 hover:underline duration-300 font-medium">Poster</a></li>
-            <li><a href="#" class="text-white hover:text-gray-500 hover:underline duration-300 font-medium">Artiker</a></li>
-            <li><a href="#" class="text-white hover:text-gray-500 hover:underline duration-300 font-medium">Video</a></li>
-            <li><a href="#" class="text-white hover:text-gray-500 hover:underline duration-300 font-medium">About</a></li>
-        </ul>
-        
-        <!-- navbar hamburger -->
-        <bottom class="navbar-hamburger  sm:hidden cursor-pointer"><span class="material-symbols-outlined">menu</span></bottom>
-        
-        <!-- Navbar Login -->
-        <a href="#" class="text-black bg-white rounded-lg p-2 font-medium flex items-center  hover:text-white hover:bg-blue-600 duration-300 cursor-pointer">Login<span class="material-symbols-outlined ml-1">login</span></a>
-    </nav>
+    <!-- fixed top-0 inset-x-0 -->
     
     <!-- hero section -->
-    <section class="hero-section">
-        <div class="hero-container flex flex-col items-start justify-center">
-
-            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-100 leading-tight mb-6">
-                Focus <span class="">Media</span>
+    <section class="hero-section h-screen text-white ">
+        <!-- navigasi -->
+        <nav class=" text-white flex justify-between items-center py-2 px-6 z-999">
+            
+            <!-- Navbar Icon -->
+            <div class="navbar-icon flex">
+                <img src="logo.png" alt="" width="32" class="">
+            </div>
+            
+            <!-- Navbar Navigasi -->
+            <ul class="navbar-nav isolate max-sm:hidden ">
+                <li><a href="#" class="text-white mix-blend-diff hover:text-gray-500 hover:underline duration-300 font-medium">Beranda</a></li>
+                <li><a href="#" class="text-white mix-blend-diff hover:text-gray-500 hover:underline duration-300 font-medium">Poster</a></li>
+                <li><a href="#" class="text-white mix-blend-diff hover:text-gray-500 hover:underline duration-300 font-medium">Artiker</a></li>
+                <li><a href="#" class="text-white mix-blend-diff hover:text-gray-500 hover:underline duration-300 font-medium">Video</a></li>
+                <li><a href="#" class="text-white mix-blend-diff hover:text-gray-500 hover:underline duration-300 font-medium">About</a></li>
+            </ul>
+            
+            <!-- navbar hamburger -->
+            <bottom class="navbar-hamburger  sm:hidden cursor-pointer"><span class="material-symbols-outlined">menu</span></bottom>
+            
+            <!-- Navbar Login -->
+            <a href="#" class="text-black bg-white rounded-lg p-2 font-medium flex items-center  hover:text-white hover:bg-blue-600 duration-300 cursor-pointer">
+                Login<span class="material-symbols-outlined ml-1">login</span>
+            </a>
+        </nav>
+        <div class="hero-container flex flex-col items-start justify-center min-h-[500px]">
+            
+            <!-- Judul Utama -->
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-100 leading-tight mb-6 tracking-tight">
+                Focus <span class="text-blue-400">Media</span>
             </h1>
-            <p class="text-lg md:text-xl text-white-600 leading-relaxed max-w-2xl mb-8 mb-[0.5rem]">
-                Tempatnya para kreator muda berkumpul untuk
-                <span class="text-blue-300 font-medium">mendokumentasikan kegiatan</span>,
+            
+            <!-- Deskripsi -->
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mb-8">
+                Tempatnya para kreator muda berkumpul untuk 
+                <span class="text-blue-300 font-semibold">dokumentasi kegiatan</span>, 
                 mengolah konten digital, dan mempublikasikan karya artikel terbaik melalui media cetak maupun digital.
             </p>
-            <div class="flex gap-3 ">
-                <a href="#karya-fokus-media" class="cursor-pointer bg-blue-600 md:text-xl text-white  px-[1rem] py-[0.5rem] rounded-lg font-semibold hover:bg-blue-700 transition"> Lihat Karya</a>
-                <button class="cursor-pointer px-[1rem] py-[0.5rem] md:text-xl  bg-gray-100 text-gray-700  rounded-lg font-semibold hover:bg-gray-200 transition"> Gabung Kreator </button>
+            
+            <!-- Tombol Aksi (CTA) -->
+            <div class="flex flex-wrap gap-4">
+                <a href="#karya-fokus-media" class="inline-block bg-blue-600 text-white text-base md:text-lg px-6 py-3 rounded-xl font-bold hover:bg-blue-700 active:scale-95 transition-all shadow-lg shadow-blue-600/20">
+                    Lihat Karya
+                </a>
+                <button class="bg-gray-100 text-gray-800 text-base md:text-lg px-6 py-3 rounded-xl font-bold hover:bg-gray-300 active:scale-95 transition-all">
+                    Gabung Kreator
+                </button>
             </div>
+
         </div>
     </section>
     
-    <!-- session definisi | focus medis -->
-    <section class="w-full min-h-[100vh] grid content-center bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <!-- definisi | section -->
+    <section class="w-full min-h-[100vh] grid content-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
             
             <div class="w-full md:w-1/2">
-                <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/3] md:aspect-auto hover:scale-105 duration-500 cursor-pointer drop-shadow-lg">
+                <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/3] md:aspect-auto hover:drop-shadow-xl duration-500 cursor-pointer drop-shadow-lg">
                     <img src="images/photo-profesional.jpg" alt="Focus Media Kegiatan" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -100,7 +111,7 @@
         </div>
     </section>
 
-    <!-- section Poster -->
+    <!-- Poster | section -->
     <section class="section-poster sm:p-2 p-8 min-h-[100vh]" id="karya-fokus-media">
         <h3 class="text-white text-center text-bold font-medium text-4xl font-extrabold py-6" >Poster</h3>
         
@@ -188,68 +199,204 @@
         </div>
     </section>
 
+    <!-- dokumentasi : section -->
+    <section class="section-docs h-screen bg-gray-50 py-12 px-6">
+        <h1 class="text-3xl text-center sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight">Kegiatan Eskul</h1>
 
-    <footer class="p-8  bg-blue-900 text-white  ">
-        
-        <div class="flex">
-            <img src="icon.png" alt="Focus Media " class="w-20 h-20 mr-4" >
-            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-100 leading-tight mb-6">Focus <span class="">Media</span></h1>
+        <div class="max-w-7xl mt-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <div class="group relative aspect-video rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-gray-100 bg-white hover:cursor-pointer">
+                    <img src="images/photo-profesional.jpg" alt="Workshop Digital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-blue-950/90 via-blue-950/70 to-transparent p-4 pt-10">
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed flex items-start gap-2">
+                            <i class="fa-solid fa-camera text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Keseruan kreator muda saat praktik langsung dokumentasi visual dan teknik fotografi jurnalistik di kelas.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group relative aspect-video rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-gray-100 bg-white hover:cursor-pointer">
+                    <img src="images/photo-profesional.jpg" alt="Workshop Digital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-blue-950/90 via-blue-950/70 to-transparent p-4 pt-10">
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed flex items-start gap-2">
+                            <i class="fa-solid fa-camera text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Keseruan kreator muda saat praktik langsung dokumentasi visual dan teknik fotografi jurnalistik di kelas.</span>
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="group relative aspect-video rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-gray-100 bg-white hover:cursor-pointer">
+                    <img src="images/photo-profesional.jpg" alt="Liputan Acara Sekolah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-blue-950/90 via-blue-950/70 to-transparent p-4 pt-10">
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed flex items-start gap-2">
+                            <i class="fa-solid fa-video text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Tim Focus Media mengabadikan momen penting dan melakukan wawancara eksklusif pada agenda pensi sekolah.</span>
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="group relative aspect-video rounded-xl overflow-hidden shadow-sm hover:shadow-md border border-gray-100 bg-white hover:cursor-pointer">
+                    <img src="images/photo-profesional.jpg" alt="Proses Menulis Artikel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-blue-950/90 via-blue-950/70 to-transparent p-4 pt-10">
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed flex items-start gap-2">
+                            <i class="fa-regular fa-newspaper text-emerald-400 mt-0.5 flex-shrink-0"></i>
+                            <span>Kolaborasi anggota divisi jurnalistik merancang tata letak dan menulis artikel mading digital sekolah.</span>
+                        </p>
+                    </div>
+                </div>
+    
+            </div>
+            
         </div>
-        <p class="text-base font-medium text-gray-300">Sebuah program yang akan memajukan smk informatika sumedang</p>
-        <div class="media-sosial flex"> 
-            <a href="#" ></a>
+    </section>
+    
+    <!-- section | footer -->
+    <footer class="bg-blue-900 text-white px-6 py-12 md:px-16">
+        <!-- Grid Container: 1 kolom di HP, 2 kolom di Tablet, 4 kolom di Laptop/Desktop -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+            
+            <!-- Kolom 1: Logo dan Deskripsi -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <img src="icon.png" alt="Focus Media Logo" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+                    <h1 class="text-3xl md:text-2xl font-extrabold text-white tracking-tight">
+                        Focus <span class="text-blue-400">Media</span>
+                    </h1>
+                </div>
+                <p class="text-sm font-normal text-white max-w-sm leading-relaxed">
+                    Sebuah program yang akan memajukan SMK Informatika Sumedang melalui kreativitas digital.
+                </p>
+            </div>
+
+            <!-- Kolom 2: Navigasi Utama -->
+            <div class="space-y-3">
+                <h2 class="text-sm font-semibold text-blue-400 uppercase tracking-wider">
+                    Navigasi
+                </h2>
+                <ul class="space-y-2 text-sm text-white">
+                    <li><a href="#" class="hover:text-blue-400 hover:underline transition-all">Beranda</a></li>
+                    <li><a href="#" class="hover:text-blue-400 hover:underline transition-all">Tentang Kami</a></li>
+                    <li><a href="#" class="hover:text-blue-400 hover:underline transition-all">Program Kerja</a></li>
+                    <li><a href="#" class="hover:text-blue-400 hover:underline transition-all">Kontak</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3: Kategori Konten -->
+            <div class="space-y-3">
+                <h2 class="text-sm font-semibold text-blue-400 uppercase tracking-wider">
+                    Kategori
+                </h2>
+                <ul class="space-y-2 text-sm text-white">
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+                            <i class="fa-regular fa-image text-xs text-blue-400"></i>
+                            <span>Poster</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+                            <i class="fa-regular fa-newspaper text-xs text-blue-400"></i>
+                            <span>Artikel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+                            <i class="fa-regular fa-folder-open text-xs text-blue-400"></i>
+                            <span>Dokumentasi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 hover:text-blue-400 transition-colors">
+                            <i class="fa-regular fa-circle-play text-xs text-blue-400"></i>
+                            <span>Video</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Kolom 4: Media Sosial -->
+            <div class="space-y-3 lg:text-right lg:flex lg:flex-col lg:items-end">
+                <h2 class="text-sm font-semibold text-gray-200 uppercase tracking-wider w-full lg:text-right">
+                    Ikuti Kami
+                </h2>
+                <div class="flex gap-3">
+
+                    <!-- Link : youtube -->
+                    <a href="#" class="flex items-center justify-center w-10 h-10 bg-blue-800 text-white rounded-xl hover:text-red-500  transition-all">
+                        <i class="fa-brands fa-youtube text-xl"></i>
+                    </a>
+                    
+                    <!-- Link : Tiktok -->
+                    <a href="#" class="flex items-center justify-center w-10 h-10 bg-blue-800 text-white rounded-xl hover:text-black  transition-all">
+                        <i class="fa-brands fa-tiktok text-xl"></i>
+                    </a>
+                    
+                    <!-- Link : Instagram -->
+                    <a href="#" class="flex items-center justify-center w-10 h-10 bg-blue-800 text-white rounded-xl hover:text-pink-500  transition-all">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    
+                    <!-- Link : X Twitter -->
+                    <a href="#" class="flex items-center justify-center w-10 h-10 bg-blue-800 text-white rounded-xl hover:text-gray-500  transition-all" aria-label="X (Twitter)">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    
+                    <!-- Link : Whatsapp -->
+                    <a href="#" class="flex items-center justify-center w-10 h-10 bg-blue-800 text-white rounded-xl hover:text-green-500  transition-all">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <!-- <i class="fa-solid fa-trophy text-red-500 text-2xl"></i> -->
-        <i class="fa-brands text-2xl p-2 cursor-pointer hover:text-gray-400 fa-youtube"></i>
-        <i class="fa-brands text-2xl p-2 cursor-pointer hover:text-gray-400 fa-tiktok"></i>
-        <i class="fa-brands text-2xl p-2 cursor-pointer hover:text-gray-400 fa-instagram"></i>
-        <i class="fa-brands text-2xl p-2 cursor-pointer hover:text-gray-400 fa-x-twitter"></i>
-        <i class="fa-brands text-2xl p-2 cursor-pointer hover:text-gray-400 fa-whatsapp"></i>
         
-        <p class="copyright mt-4 pt-8 border-t font-medium">
-            Dibuat dengan penuh cinta Focus Media &copy; 2026
-        </p>
+        <!-- Garis Pembatas & Copyright -->
+        <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-blue-400 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs md:text-sm text-white font-medium">
+            <p>Dibuat dengan penuh cinta oleh Focus Media</p>
+            <p>© 2026 SMK Informatika Sumedang. All rights reserved.</p>
+        </div>
     </footer>
 
-
+    <!-- script js -->
     <script src="script/script.js"></script>
-<script>
-    // Ambil semua elemen yang dibutuhkan
-    const btnPoster = document.getElementById('btn-poster');
-    const btnArtikel = document.getElementById('btn-artikel');
-    const posterContent = document.getElementById('poster-content');
-    const artikelContent = document.getElementById('artikel-content');
+    <script>
+        // Ambil semua elemen yang dibutuhkan
+        const btnPoster = document.getElementById('btn-poster');
+        const btnArtikel = document.getElementById('btn-artikel');
+        const posterContent = document.getElementById('poster-content');
+        const artikelContent = document.getElementById('artikel-content');
 
-    // Fungsi ketika tombol Poster diklik
-    btnPoster.addEventListener('click', function(e) {
-        e.preventDefault(); // Mencegah reload halaman
-        
-        // 1. Tampilkan poster, sembunyikan artikel
-        posterContent.classList.remove('hidden');
-        artikelContent.classList.add('hidden');
-        
-        // 2. Ubah styling tombol Poster jadi Aktif (bg-white, text-black)
-        btnPoster.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-white text-black";
-        
-        // 3. Ubah styling tombol Artikel jadi Pasif (bg-transparent, text-white)
-        btnArtikel.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-transparent text-white hover:bg-white hover:text-black";
-    });
+        // Fungsi ketika tombol Poster diklik
+        btnPoster.addEventListener('click', function(e) {
+            e.preventDefault(); // Mencegah reload halaman
+            
+            // 1. Tampilkan poster, sembunyikan artikel
+            posterContent.classList.remove('hidden');
+            artikelContent.classList.add('hidden');
+            
+            // 2. Ubah styling tombol Poster jadi Aktif (bg-white, text-black)
+            btnPoster.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-white text-black";
+            
+            // 3. Ubah styling tombol Artikel jadi Pasif (bg-transparent, text-white)
+            btnArtikel.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-transparent text-white hover:bg-white hover:text-black";
+        });
 
-    // Fungsi ketika tombol Artikel diklik
-    btnArtikel.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // 1. Tampilkan artikel, sembunyikan poster
-        artikelContent.classList.remove('hidden');
-        posterContent.classList.add('hidden');
-        
-        // 2. Ubah styling tombol Artikel jadi Aktif
-        btnArtikel.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-white text-black";
-        
-        // 3. Ubah styling tombol Poster jadi Pasif
-        btnPoster.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-transparent text-white hover:bg-white hover:text-black";
-    });
-</script>
+        // Fungsi ketika tombol Artikel diklik
+        btnArtikel.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 1. Tampilkan artikel, sembunyikan poster
+            artikelContent.classList.remove('hidden');
+            posterContent.classList.add('hidden');
+            
+            // 2. Ubah styling tombol Artikel jadi Aktif
+            btnArtikel.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-white text-black";
+            
+            // 3. Ubah styling tombol Poster jadi Pasif
+            btnPoster.className = "p-4 text-2xl text-center font-semibold w-1/2 rounded-t-lg transition duration-500 bg-transparent text-white hover:bg-white hover:text-black";
+        });
+    </script>
 </body>
 </html>
 

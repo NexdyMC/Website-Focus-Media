@@ -67,9 +67,9 @@ body {
 }
 
 .hero-section {
-    height: 100vh;
-    color: #fff;
-    background: url(../images/hero-section.jpeg) center / cover;
+    background: 
+        linear-gradient(90deg, oklch(37.758% 0.14662 265.787), oklch(48.8% 0.243 264.376) 30%, rgba(0, 0, 0, 0)),
+        url(../images/hero-section.jpeg) center / cover no-repeat;
 }
 
 .text-blue {
@@ -83,7 +83,6 @@ body {
 .hero-container {
     
     text-align: left;
-    background: linear-gradient(90deg, oklch(37.758% 0.14662 265.787 / 50),  oklch(48.8% 0.243 264.376) 30%, rgba(0, 0, 0, 0));
     height: 100%;
     padding: 3em;
     font-size: 1.5rem;
